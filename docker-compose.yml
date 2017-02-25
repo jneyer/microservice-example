@@ -1,0 +1,14 @@
+
+model:
+ image: service/service
+ ports:
+  - 8080
+ha_service:
+ image: tutum/haproxy
+ links:
+   - model
+ ports:
+   - 8080:80
+ expose:
+   - 80
+
