@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import com.example.model.Model;
 import com.example.repository.ModelRepository;
 import com.example.service.ModelService;
-import com.example.util.CollectionRequest;
-import com.example.util.CollectionResponse;
-import com.example.util.ResourceException;
+import com.giantrobotlabs.util.CollectionRequest;
+import com.giantrobotlabs.util.CollectionResponse;
+import com.giantrobotlabs.util.ResourceException;
 
 @Service
 public class ModelServiceImpl implements ModelService<Model> {

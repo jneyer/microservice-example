@@ -21,8 +21,8 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import com.example.model.Model;
 import com.example.service.ModelService;
-import com.example.util.CollectionRequest;
-import com.example.util.CollectionResponse;
+import com.giantrobotlabs.util.CollectionRequest;
+import com.giantrobotlabs.util.CollectionResponse;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ModelResourceImplTest {

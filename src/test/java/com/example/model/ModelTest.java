@@ -9,8 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.example.model.Model;
-
 @RunWith(MockitoJUnitRunner.class)
 public class ModelTest {
 

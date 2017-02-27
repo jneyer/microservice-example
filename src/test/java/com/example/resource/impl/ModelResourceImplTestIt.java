@@ -1,6 +1,6 @@
 package com.example.resource.impl;
 
-import static com.example.util.TestUtils.asJsonString;
+import static com.giantrobotlabs.util.TestUtils.asJsonString;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Matchers.anyLong;
 import static org.mockito.Matchers.isA;
@@ -29,8 +29,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.example.model.Model;
 import com.example.service.ModelService;
-import com.example.util.CollectionResponse;
-import com.example.util.ResourceException;
+import com.giantrobotlabs.util.CollectionResponse;
+import com.giantrobotlabs.util.ResourceException;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ModelResourceImpl.class)

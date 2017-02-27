@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.Model;
 import com.example.resource.ModelResource;
 import com.example.service.ModelService;
-import com.example.util.CollectionRequest;
-import com.example.util.CollectionResponse;
+import com.giantrobotlabs.util.CollectionRequest;
+import com.giantrobotlabs.util.CollectionResponse;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

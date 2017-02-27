@@ -24,9 +24,9 @@ import org.springframework.data.domain.Pageable;
 
 import com.example.model.Model;
 import com.example.repository.ModelRepository;
-import com.example.util.CollectionRequest;
-import com.example.util.CollectionResponse;
-import com.example.util.ResourceException;
+import com.giantrobotlabs.util.CollectionRequest;
+import com.giantrobotlabs.util.CollectionResponse;
+import com.giantrobotlabs.util.ResourceException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ModelServiceImplTest {
