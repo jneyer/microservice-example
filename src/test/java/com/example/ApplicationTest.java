@@ -10,8 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @TestPropertySource(locations = "classpath:test.properties")
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-
+@SpringBootTest(webEnvironment = WebEnvironment.MOCK)
 public class ApplicationTest {
 
 	@Before
@@ -21,6 +20,7 @@ public class ApplicationTest {
 
 	@Test
 	public void testRun() throws Exception {
+		Application.main(new String[0]);
 
 	}
 

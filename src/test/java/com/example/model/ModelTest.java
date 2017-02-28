@@ -31,7 +31,7 @@ public class ModelTest {
 		model2.update(model1);
 		model2.onUpdate();
 
-		assertThat(model2.getId(), equalTo(2L));
+		assertThat(model2.getModelId(), equalTo(2L));
 		assertThat(model2.getCreated(), notNullValue());
 		assertThat(model2.getUpdated(), notNullValue());
 		assertThat(model2.getFieldOne(), equalTo("value1"));

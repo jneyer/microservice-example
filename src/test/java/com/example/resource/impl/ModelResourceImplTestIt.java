@@ -16,7 +16,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.util.NestedServletException;
 
 import com.example.model.Model;
 import com.example.service.ModelService;
@@ -44,6 +47,9 @@ public class ModelResourceImplTestIt {
 
 	@InjectMocks
 	private ModelResourceImpl modelResourceImpl;
+
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
 
 	@Before
 	public void setUp() throws Exception {
@@ -69,8 +75,14 @@ public class ModelResourceImplTestIt {
 	public void testGetOneModels() throws Exception {
 
 		mvc.perform(get("/models/1").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(jsonPath("$.id", is(1)));
+				.andExpect(jsonPath("$.modelId", is(1)));
 
+	}
+
+	@Test
+	public void testGetOneModelsNotFound() throws Exception {
+
+		thrown.expect(NestedServletException.class);
 		mvc.perform(get("/models/2").accept(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound());
 
 	}
