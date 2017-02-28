@@ -10,7 +10,9 @@ import com.giantrobotlabs.model.ModelTemplate;
 
 @Entity
 @Table(name = "model")
-public class Model extends ModelTemplate {
+public class Model extends ModelTemplate<Model> {
+
+	private static final long serialVersionUID = 3197894214271739642L;
 
 	@Column(name = "field_one")
 	private String fieldOne;
@@ -25,12 +27,6 @@ public class Model extends ModelTemplate {
 	public Model(Long modelId) {
 		super();
 		this.modelId = modelId;
-	}
-
-	public Model update(Model model) {
-		this.fieldOne = Optional.ofNullable(model.getFieldOne()).orElse(this.fieldOne);
-		this.fieldTwo = Optional.ofNullable(model.getFieldTwo()).orElse(this.fieldTwo);
-		return this;
 	}
 
 	public String getFieldOne() {
@@ -50,13 +46,10 @@ public class Model extends ModelTemplate {
 	}
 
 	@Override
-	protected void onCreate() {
-		super.onCreate();
-	}
-
-	@Override
-	protected void onUpdate() {
-		super.onUpdate();
+	public Model update(Model model) {
+		this.fieldOne = Optional.ofNullable(model.getFieldOne()).orElse(this.fieldOne);
+		this.fieldTwo = Optional.ofNullable(model.getFieldTwo()).orElse(this.fieldTwo);
+		return this;
 	}
 
 	@Override
